@@ -77,7 +77,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         while(playing) {
             long startFrameTime = System.currentTimeMillis();
             update();
-            draw(); //TODO: draw method
+            draw();
             timeThisFrame = System.currentTimeMillis() - startFrameTime;
             if (timeThisFrame >= 1) {
                 fps = 1000 / timeThisFrame;
