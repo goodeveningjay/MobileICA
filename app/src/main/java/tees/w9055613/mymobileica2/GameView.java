@@ -14,7 +14,7 @@ import android.view.SurfaceView;
 
 import androidx.annotation.NonNull;
 
-public class GameView extends SurfaceView implements SurfaceHolder.Callback {
+public class GameView extends SurfaceView implements SurfaceHolder.Callback, SurfaceHolder.Callback2 {
 
     // Class variables
     private volatile boolean playing;
@@ -148,6 +148,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceDestroyed(@NonNull SurfaceHolder surfaceHolder) {
+
+    }
+
+    @Override
+    public void surfaceRedrawNeeded(@NonNull SurfaceHolder surfaceHolder) {
 
     }
 }
