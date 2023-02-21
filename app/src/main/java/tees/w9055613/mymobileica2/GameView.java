@@ -14,7 +14,7 @@ import android.view.SurfaceView;
 
 import androidx.annotation.NonNull;
 
-public class GameView extends SurfaceView implements SurfaceHolder.Callback, SurfaceHolder.Callback2 {
+public class GameView extends SurfaceView implements SurfaceHolder.Callback, SurfaceHolder.Callback2, Runnable {
 
     // Class variables
     private volatile boolean playing;
@@ -22,6 +22,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Sur
     private SurfaceHolder surfaceHolder;
     private Canvas canvas;
     private Bitmap bitmap;
+    private Thread gameThread;
 
     private float xPos, yPos;
     private int frameW, frameH;
