@@ -14,6 +14,8 @@ import android.view.SurfaceView;
 
 import androidx.annotation.NonNull;
 
+// TODO:
+
 public class GameView extends SurfaceView implements SurfaceHolder.Callback, SurfaceHolder.Callback2, Runnable {
 
     // Class variables
@@ -59,7 +61,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Sur
     public void resume() {
         playing = true;
         // Works if we extend Runnable to have a run method
-        gameThread = new Thread(this); //TODO: create gameThread
+        gameThread = new Thread(this);
         gameThread.start();
     }
 
@@ -130,7 +132,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Sur
 
     @Override
     public boolean onTouchEvent(MotionEvent event){
-        //TODO: react to touch chapter (pg. 20 in slides)
+        //Simplest way to react to touch
+        switch (event.getAction() & MotionEvent.ACTION_MASK) {
+            case MotionEvent.ACTION_DOWN :
+                isMoving = !isMoving;
+                break;
+        }
         return true;
     }
 
