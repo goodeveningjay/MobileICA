@@ -27,7 +27,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Sur
     private Thread gameThread;
 
     private float xPos, yPos;
-    private int frameW, frameH;
+    private int frameW = 64, frameH = 64; // TODO: Find out sprite size
     private int frameCount = 8;
     private int currentFrame = 0;
     private Rect frameToDraw =      // The frame within the bitmap that we want to draw

@@ -13,6 +13,10 @@ public class GameActivity extends AppCompatActivity {
         setContentView(gameView); // <-- using gameView instead of a layout file
     }
 
+    // TODO:
+    // 1. Gesture
+    // 2. Call methods from View
+
     @Override
     protected void onResume() {
         super.onResume();
