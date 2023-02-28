@@ -2,6 +2,7 @@ package tees.w9055613.mymobileica2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 public class GameActivity extends AppCompatActivity {
@@ -9,6 +10,7 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         gameView = new GameView(this);
         setContentView(gameView); // <-- using gameView instead of a layout file
     }

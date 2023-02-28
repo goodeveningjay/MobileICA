@@ -14,7 +14,6 @@ import android.view.SurfaceView;
 
 import androidx.annotation.NonNull;
 
-// TODO:
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback, SurfaceHolder.Callback2, Runnable {
 
@@ -27,8 +26,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Sur
     private Thread gameThread;
 
     private float xPos, yPos;
-    private int frameW = 64, frameH = 64; // TODO: Find out sprite size
-    private int frameCount = 8;
+    private int frameW, frameH; // TODO: Find out sprite size
+    private int frameCount;
     private int currentFrame = 0;
     private Rect frameToDraw =      // The frame within the bitmap that we want to draw
             new Rect(0,0,frameW, frameH);
@@ -43,14 +42,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Sur
 
 
     // GameView Constructor
+    // initialise game view
     public GameView(Context context) {
         super(context);
         surfaceHolder = getHolder(); // useful later
         // image i am using is 8 wide and 2 deep
         bitmap = BitmapFactory.decodeResource(
                 getResources(), // <- access resources
-                R.drawable.scottpilgrim_multiple); // <- our drawable folder
-
+                R.drawable.gun_turret); // <- our drawable folder
+        frameW = 64; // TODO: write method to get frameW and frameH programmatically
+        frameH = 64;
         bitmap = Bitmap.createScaledBitmap(bitmap,
                         frameW * frameCount, frameH, // <- dimensions of frames
                         false);
