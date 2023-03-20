@@ -49,7 +49,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Sur
         // image i am using is 8 wide and 2 deep
         bitmap = BitmapFactory.decodeResource(
                 getResources(), // <- access resources
-                R.drawable.gun_turret); // <- our drawable folder
+                R.drawable.scottpilgrim_multiple); // <- our drawable folder
         frameW = 64; // TODO: write method to get frameW and frameH programmatically
         frameH = 64;
         bitmap = Bitmap.createScaledBitmap(bitmap,
