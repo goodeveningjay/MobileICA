@@ -131,16 +131,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Sur
         frameToDraw.right = frameToDraw.left + frameW;
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event){
-        //Simplest way to react to touch
-        switch (event.getAction() & MotionEvent.ACTION_MASK) {
-            case MotionEvent.ACTION_DOWN :
-                isMoving = !isMoving;
-                break;
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event){
+//        //Simplest way to react to touch
+//        switch (event.getAction() & MotionEvent.ACTION_MASK) {
+//            case MotionEvent.ACTION_DOWN :
+//                isMoving = !isMoving;
+//                break;
+//        }
+//        Log.d("GameView", "onTouchEvent");
+//        return true;
+//    }
 
 
     // useful later

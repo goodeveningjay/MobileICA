@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity implements
-        View.OnTouchListener,
+//        View.OnTouchListener,
         GestureDetector.OnGestureListener,
         GestureDetector.OnDoubleTapListener {
 
@@ -29,7 +29,7 @@ public class GameActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         gameView = new GameView(this);
-        gameView.setOnTouchListener((View.OnTouchListener) this);
+//        gameView.setOnTouchListener((View.OnTouchListener) this);
         setContentView(gameView); // <-- using gameView instead of a layout file
         // Instantiate the gesture detector with the
         // application context and an implementation of
@@ -43,32 +43,32 @@ public class GameActivity extends AppCompatActivity implements
     // 1. Gesture
     // 2. Call methods from View
 
-    @Override
-    public boolean onTouch(View view, MotionEvent motionEvent) {
-        sb.setLength(0);
-        switch (motionEvent.getActionMasked()){
-            case MotionEvent.ACTION_DOWN:
-                sb.append("down, ");
-                break;
-            case MotionEvent.ACTION_UP:
-                sb.append("up, ");
-                break;
-            case MotionEvent.ACTION_MOVE:
-                sb.append("move, ");
-                break;
-        }
-        sb.append(motionEvent.getX() + ", " + motionEvent.getY());
-        String text = sb.toString();
-        Log.d("Single Touch", text);
-        return true; // The event was consumed!
-    }
+//    @Override
+//    public boolean onTouch(View view, MotionEvent motionEvent) {
+//        sb.setLength(0);
+//        switch (motionEvent.getActionMasked()){
+//            case MotionEvent.ACTION_DOWN:
+//                sb.append("down, ");
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                sb.append("up, ");
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                sb.append("move, ");
+//                break;
+//        }
+//        sb.append(motionEvent.getX() + ", " + motionEvent.getY());
+//        String text = sb.toString();
+//        Log.d("Single Touch", text);
+//        return true; // The event was consumed!
+//    }
 
-    /*@Override
+    @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {
         if(this.mDetector.onTouchEvent(motionEvent))
             return true;
         return super.onTouchEvent(motionEvent);
-    }*/
+    }
 
     @Override
     protected void onResume() {
