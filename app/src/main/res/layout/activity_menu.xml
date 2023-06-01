@@ -10,17 +10,18 @@
         android:id="@+id/menuTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="@string/main_menu"
         android:textColor="@color/purple_200"
         android:textSize="60sp"
         android:textStyle="bold"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/menuTable"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/menuTable"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/menuTable"
@@ -39,9 +40,9 @@
                 android:id="@+id/playButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/play_game"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="8dp"
+                android:text="@string/play_game" />
         </TableRow>
 
         <TableRow
